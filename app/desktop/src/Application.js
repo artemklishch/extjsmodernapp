@@ -26,3 +26,9 @@ Ext.define('ModernApp.Application', {
 		);
 	}
 });
+
+// Ext.define("ModernApp.Application", {
+//   extend: "Ext.app.Application",
+//   requires: ["ModernApp.view.main.Main"],
+//   mainView: "ModernApp.view.main.Main",
+// });
