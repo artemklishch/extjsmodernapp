@@ -1,28 +1,1401 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html manifest="">
-<head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
-	<title>ModernApp</title>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes"
+    />
+    <title>ModernApp</title>
+    <link rel = "stylesheet" type = "text/css" href =
+    "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-crisp/resources/theme-crisp-all.css"
+    / >
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"
+    ></script>
 
-  <script type="text/javascript">
-    var Ext = Ext || {};
-    Ext.beforeLoad = function (tags) {
-      //var s = location.search;
-      var profile;
-      profile = 'desktop';
-      Ext.manifest ='generatedFiles/' + profile;
-    };
-  </script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts.js"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/classic/resources/charts-all.css"
+      rel="stylesheet"
+    />
 
-  <!-- The line below must be kept intact for Sencha Cmd to build your application -->
-  <script id="microloader" data-app="faf97384-97b8-4685-b899-d732d2735710" type="text/javascript" src="generatedFiles/bootstrap.js"></script>
-</head>
+    <script type="text/javascript">
+      // var Ext = Ext || {};
+      // Ext.beforeLoad = function (tags) {
+      //   //var s = location.search;
+      //   var profile;
+      //   profile = 'desktop';
+      //   Ext.manifest ='generatedFiles/' + profile;
+      // };
+
+      // 1
+      // Ext.onReady(function() {
+      //       Ext.create('Ext.Panel', {
+      //          renderTo: 'helloWorldPanel',
+      //          height: 200,
+      //          width: 600,
+      //          title: 'Hello world',
+      //          html: 'First Ext JS Hello World Program'
+      //       });
+      //    });
+
+      //Containers
+      //2
+      // Ext.onReady(function () {
+      //   var childPanel1 = Ext.create("Ext.Panel", {
+      //     title: "sdfsadfsdf",
+      //     html: "First Panel",
+      //   });
+      //   var childPanel2 = Ext.create("Ext.Panel", {
+      //     html: "Another Panel",
+      //   });
+      //   Ext.create("Ext.panel.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     width: 100,
+      //     height: 100,
+      //     border: true,
+      //     frame: true,
+      //     items: [childPanel1, childPanel2],
+      //   });
+      // });
+
+      //3
+      // Ext.onReady(function () {
+      //   var child1 = Ext.create("Ext.Panel", {
+      //     html: "Text field",
+      //   });
+      //   var child2 = Ext.create("Ext.Panel", {
+      //     html: "Text field",
+      //   });
+      //   Ext.create("Ext.form.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     width: 100,
+      //     height: 100,
+      //     border: true,
+      //     frame: true,
+      //     layout: "auto", // auto is one of the layout type.
+      //     items: [child1, child2],
+      //   });
+      // });
+
+      //4
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.tab.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     height: 100,
+      //     width: 400,
+
+      //     items: [
+      //       {
+      //         xtype: "panel",
+      //         title: "Tab One",
+      //         html: "The first tab",
+      //         listeners: {
+      //           render: function () {
+      //             Ext.MessageBox.alert("Tab one", "Tab One was clicked.");
+      //           },
+      //         },
+      //       },
+      //       {
+      //         // xtype for all Component configurations in a Container
+      //         title: "Tab Two",
+      //         html: "The second tab",
+      //         listeners: {
+      //           render: function () {
+      //             Ext.MessageBox.alert("Tab two", "Tab Two was clicked.");
+      //           },
+      //         },
+      //       },
+      //       {
+      //         // xtype for all Component configurations in a Container
+      //         title: "Tab Third",
+      //         html: "The third tab",
+      //         listeners: {
+      //           render: function () {
+      //             Ext.MessageBox.alert("Tab third", "Tab Third was clicked.");
+      //           },
+      //         },
+      //       },
+      //     ],
+      //   });
+      // });
+
+      //5
+      // Ext.onReady(function () {
+      //   var childPanel1 = Ext.create("Ext.panel.Panel", {
+      //     title: "Child Panel 1",
+      //     html: "A Panel",
+      //   });
+      //   var childPanel2 = Ext.create("Ext.panel.Panel", {
+      //     title: "Child Panel 2",
+      //     html: "Another Panel",
+      //   });
+      //   Ext.create("Ext.container.Viewport", {
+      //     renderTo: Ext.getBody(),
+      //     items: [childPanel1, childPanel2],
+      //   });
+      // });
+
+      //Layouts
+      //6 Absolute
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: "absolute",
+
+      //     items: [
+      //       {
+      //         title: "Panel 1",
+      //         x: 50,
+      //         y: 50,
+      //         html: "Positioned at x:50, y:50",
+      //         width: 500,
+      //         height: 100,
+      //       },
+      //       {
+      //         title: "Panel 2",
+      //         x: 100,
+      //         y: 95,
+      //         html: "Positioned at x:100, y:95",
+      //         width: 500,
+      //         height: 100,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      //7 Accordion
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: "accordion",
+      //     width: 600,
+
+      //     items: [
+      //       {
+      //         title: "Panel 1",
+      //         html: "Panel 1 html content",
+      //       },
+      //       {
+      //         title: "Panel 2",
+      //         html: "Panel 2 html content",
+      //       },
+      //       {
+      //         title: "Panel 3",
+      //         html: "Panel 3 html content",
+      //       },
+      //       {
+      //         title: "Panel 4",
+      //         html: "Panel 4 html content",
+      //       },
+      //       {
+      //         title: "Panel 5",
+      //         html: "Panel 5 html content",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 8 Anchor
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: "anchor",
+      //     width: 600,
+
+      //     items: [
+      //       {
+      //         title: "Panel 1",
+      //         html: "panel 1",
+      //         height: 100,
+      //         anchor: "50%",
+      //       },
+      //       {
+      //         title: "Panel 2",
+      //         html: "panel 2",
+      //         height: 100,
+      //         anchor: "100%",
+      //       },
+      //       {
+      //         title: "Panel 3",
+      //         html: "panel 3",
+      //         height: 100,
+      //         anchor: "-100",
+      //       },
+      //       {
+      //         title: "Panel 4",
+      //         html: "panel 4",
+      //         anchor: "-70, 500",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 9 Border
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.panel.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     height: 300,
+      //     width: 600,
+      //     layout: "border",
+
+      //     defaults: {
+      //       collapsible: true,
+      //       split: true,
+      //       bodyStyle: "padding:15px",
+      //     },
+      //     items: [
+      //       {
+      //         title: "Panel1",
+      //         region: "west",
+      //         html: "This is Panel 1",
+      //       },
+      //       {
+      //         title: "Panel2",
+      //         region: "center",
+      //         html: "This is Panel 2",
+      //       },
+      //       {
+      //         title: "Panel3",
+      //         region: "south",
+      //         html: "This is Panel 3",
+      //       },
+      //       {
+      //         title: "Panel4",
+      //         region: "east",
+      //         html: "This is Panel 4",
+      //       },
+      //       {
+      //         title: "Panel5",
+      //         region: "north",
+      //         html: "This is Panel 5",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 10 Auto
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: "auto",
+      //     width: 600,
+
+      //     items: [
+      //       {
+      //         title: "First Component",
+      //         html: "This is First Component",
+      //       },
+      //       {
+      //         title: "Second Component",
+      //         html: "This is Second Component",
+      //       },
+      //       {
+      //         title: "Third Component",
+      //         html: "This is Third Component",
+      //       },
+      //       {
+      //         title: "Fourth Component",
+      //         html: "This is Fourth Component",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 11 Tabpanel
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.tab.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     requires: ["Ext.layout.container.Card"],
+      //     xtype: "layout-cardtabs",
+      //     width: 600,
+      //     height: 200,
+      //     items: [
+      //       {
+      //         title: "Tab 1",
+      //         html: "This is first tab.",
+      //       },
+      //       {
+      //         title: "Tab 2",
+      //         html: "This is second tab.",
+      //       },
+      //       {
+      //         title: "Tab 3",
+      //         html: "This is third tab.",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 12 Card
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.panel.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     requires: ["Ext.layout.container.Card"],
+      //     layout: "card",
+      //     width: 600,
+      //     height: 200,
+      //     bodyPadding: 15,
+      //     title: 'sdfsdf',
+
+      //     defaults: {
+      //       border: false,
+      //     },
+      //     defaultListenerScope: true,
+
+      //     bbar: [
+      //       "->",
+      //       {
+      //         itemId: "card-prev",
+      //         text: "« Previous",
+      //         handler: "showPrevious",
+      //         disabled: true,
+      //       },
+      //       {
+      //         itemId: "card-next",
+      //         text: "Next »",
+      //         handler: "showNext",
+      //       },
+      //     ],
+
+      //     items: [
+      //       {
+      //         id: "card0",
+      //         html:
+      //           '<h2> This is card wizard layout </h2> <p> This is first card </p> <p> Please click the "Next" button to continue... </p>',
+      //       },
+      //       {
+      //         id: "card1",
+      //         html:
+      //           '<p> This is second card </p> <p> Please click the "Next" button for next card and "Previous" button for previous card... </p>',
+      //       },
+      //       {
+      //         id: "card2",
+      //         html:
+      //           '<p> This is final card </p> <p> Please click the "Previous" button for previous card... </p>',
+      //       },
+      //     ],
+
+      //     showNext: function () {
+      //       this.cardPanelNavigation(1);
+      //     },
+
+      //     showPrevious: function (btn) {
+      //       this.cardPanelNavigation(-1);
+      //     },
+
+      //     cardPanelNavigation: function (incr) {
+      //       var me = this;
+      //       console.log('this', me)
+      //       console.log('this', me.down)
+      //       var l = me.getLayout();
+      //       console.log('l', l)
+      //       var i = l.activeItem.id.split("card")[1];
+      //       console.log('i', i)
+      //       var next = parseInt(i, 10) + incr;
+      //       console.log('next', next)
+      //       l.setActiveItem(next);
+      //       me.down("#card-prev").setDisabled(next === 0);
+      //       me.down("#card-next").setDisabled(next === 2);
+      //     },
+      //   });
+      // });
+
+      // 13 Column
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.panel.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     layout: "column",
+      //     xtype: "layout-column",
+      //     requires: ["Ext.layout.container.Column"],
+      //     width: 600,
+
+      //     items: [
+      //       {
+      //         title: "First Component width 30%",
+      //         html: "This is First Component",
+      //         columnWidth: 0.3,
+      //       },
+      //       {
+      //         title: "Second Component width 40%",
+      //         html:
+      //           "<p> This is Second Component </p> <p> Next line for second component </p>",
+      //         columnWidth: 0.4,
+      //       },
+      //       {
+      //         title: "Third Component width 30%",
+      //         html: "This is Third Component",
+      //         columnWidth: 0.3,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 14 Fit
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: {
+      //       type: "fit",
+      //     },
+      //     // layout: 'fit',
+      //     width: 600,
+      //     defaults: {
+      //       bodyPadding: 15,
+      //     },
+      //     items: [
+      //       {
+      //         title: "Panel1",
+      //         html: "This is panel 1",
+      //       },
+      //       {
+      //         title: "Panel2",
+      //         html: "This is panel 2",
+      //       },
+      //       {
+      //         title: "Panel3",
+      //         html: "This is panel 3",
+      //       },
+      //       {
+      //         title: "Panel4",
+      //         html: "This is panel 4",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 15 Table
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: {
+      //       type: "table",
+      //       columns: 3,
+      //       tableAttrs: {
+      //         style: {
+      //           width: "100%",
+      //         },
+      //       },
+      //     },
+      //     width: 600,
+      //     height: 200,
+
+      //     items: [
+      //       {
+      //         title: "Panel1",
+      //         html: "This panel has colspan = 2",
+      //         colspan: 2,
+      //       },
+      //       {
+      //         title: "Panel2",
+      //         html: "This panel has rowspan = 2",
+      //         rowspan: 2,
+      //       },
+      //       {
+      //         title: "Panel3",
+      //         html: "This  s panel 3",
+      //       },
+      //       {
+      //         title: "Panel4",
+      //         html: "This is panel 4",
+      //       },
+      //       {
+      //         title: "Panel5",
+      //         html: "This is panel 5",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 16 vBox
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.panel.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     layout: {
+      //       type: "vbox",
+      //       align: "stretch",
+      //     },
+      //     requires: ["Ext.layout.container.VBox"],
+      //     xtype: "layout-vertical-box",
+      //     width: 600,
+      //     height: 400,
+      //     frame: true,
+      //     items: [
+      //       {
+      //         title: "Panel 1",
+      //         html: "Panel with flex 1",
+      //         margin: "0 0 10 0",
+      //         flex: 1,
+      //       },
+      //       {
+      //         title: "Panel 2",
+      //         html: "Panel with flex 2",
+      //         margin: "0 0 10 0",
+      //         flex: 2,
+      //       },
+      //       {
+      //         title: "Panel 3",
+      //         flex: 2,
+      //         margin: "0 0 10 0",
+      //         html: "Panel with flex 2",
+      //       },
+      //       {
+      //         title: "Panel 4",
+      //         html: "Panel with flex 1",
+      //         margin: "0 0 10 0",
+      //         flex: 1,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 17 xBox
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.panel.Panel", {
+      //     renderTo: Ext.getBody(),
+      //     layout: {
+      //       type: "hbox",
+      //     },
+      //     requires: ["Ext.layout.container.HBox"],
+      //     xtype: "layout-horizontal-box",
+      //     width: 600,
+      //     frame: true,
+      //     items: [
+      //       {
+      //         title: "Panel 1",
+      //         html: "Panel with flex 1",
+      //         flex: 1,
+      //       },
+      //       {
+      //         title: "Panel 2",
+      //         html: "Panel with flex 2",
+      //         flex: 2,
+      //       },
+      //       {
+      //         title: "Panel 3",
+      //         width: 150,
+      //         html: "Panel with width 150",
+      //       },
+      //       {
+      //         title: "Panel 4",
+      //         html: "Panel with flex 1",
+      //         flex: 1,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // Components
+      // 18 Grid
+      // Creation of data model
+      // Ext.define("StudentDataModel", {
+      //   extend: "Ext.data.Model",
+      //   fields: [
+      //     { name: "name", mapping: "name" },
+      //     { name: "age", mapping: "age" },
+      //     { name: "marks", mapping: "marks" },
+      //   ],
+      // });
+
+      // Ext.onReady(function () {
+      //   // Store data
+      //   var myData = [
+      //     { name: "Asha", age: "16", marks: "90" },
+      //     { name: "Vinit", age: "80", marks: "95" },
+      //     { name: "Anand", age: "20", marks: "68" },
+      //     { name: "Niharika", age: "21", marks: "86" },
+      //     { name: "Manali", age: "22", marks: "57" },
+      //   ];
+
+      //   // Creation of first grid store
+      //   var gridStore = Ext.create("Ext.data.Store", {
+      //     model: "StudentDataModel",
+      //     data: myData,
+      //   });
+
+      //   // Creation of first grid
+      //   Ext.create("Ext.grid.Panel", {
+      //     id: "gridId",
+      //     store: gridStore,
+      //     stripeRows: true,
+      //     title: "Students Grid", // Title for the grid
+      //     renderTo: "gridDiv", // Div id where the grid has to be rendered
+      //     width: 600,
+      //     collapsible: true, // property to collapse grid
+      //     enableColumnMove: true, // property which allows column to move to different position by dragging that column.
+      //     enableColumnResize: true, // property which allows to resize column run time.
+
+      //     columns: [
+      //       {
+      //         header: "Student Name",
+      //         dataIndex: "name",
+      //         id: "name",
+      //         flex: 1, // property defines the amount of space this column is going to take in the grid container with respect to all.
+      //         sortable: true, // property to sort grid column data.
+      //         hideable: true, // property which allows column to be hidden run time on user request.
+      //       },
+      //       {
+      //         header: "Age",
+      //         dataIndex: "age",
+      //         flex: 0.5,
+      //         sortable: true,
+      //         hideable: false, // this column will not be available to be hidden.
+      //       },
+      //       {
+      //         header: "Marks",
+      //         dataIndex: "marks",
+      //         flex: 0.5,
+      //         sortable: true,
+
+      //         // renderer is used to manipulate data based on some conditions here
+      //         // who ever has marks greater than 75 will be displayed as
+      //         // 'Distinction' else 'Non Distinction'.
+      //         renderer: function (
+      //           value,
+      //           metadata,
+      //           record,
+      //           rowIndex,
+      //           colIndex,
+      //           store
+      //         ) {
+      //           if (value > 75) {
+      //             return "Distinction";
+      //           } else {
+      //             return "Non Distinction";
+      //           }
+      //         },
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 19 Form
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.form.Panel", {
+      //     id: "newForm",
+      //     renderTo: "formId",
+      //     border: true,
+      //     width: 600,
+
+      //     items: [
+      //       {
+      //         xtype: "textfield",
+      //         fieldLabel: "Text Field",
+      //       },
+      //       {
+      //         xtype: "displayfield",
+      //         fieldLabel: "Display Field",
+      //       },
+      //       {
+      //         xtype: "textarea",
+      //         fieldLabel: "Text Area",
+      //       },
+      //       {
+      //         xtype: "datefield",
+      //         fieldLabel: "Date picker",
+      //       },
+      //       {
+      //         xtype: "button",
+      //         text: "Button",
+      //       },
+      //       {
+      //         xtype: "fieldcontainer",
+      //         fieldLabel: "Radio field",
+      //         defaultType: "radiofield",
+      //         defaults: {
+      //           flex: 1,
+      //         },
+      //         layout: "hbox",
+      //         items: [
+      //           {
+      //             boxLabel: "A",
+      //             inputValue: "a",
+      //             id: "radio1",
+      //           },
+      //           {
+      //             boxLabel: "B",
+      //             inputValue: "b",
+      //             id: "radio2",
+      //           },
+      //           {
+      //             boxLabel: "C",
+      //             inputValue: "c",
+      //             id: "radio3",
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         xtype: "fieldcontainer",
+      //         fieldLabel: "Check Box Field",
+      //         defaultType: "checkboxfield",
+
+      //         items: [
+      //           {
+      //             boxLabel: "HTML",
+      //             inputValue: "html",
+      //             id: "checkbox1",
+      //           },
+      //           {
+      //             boxLabel: "CSS",
+      //             inputValue: "css",
+      //             checked: true,
+      //             id: "checkbox2",
+      //           },
+      //           {
+      //             boxLabel: "JavaScript",
+      //             inputValue: "js",
+      //             id: "checkbox3",
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         xtype: "hiddenfield",
+      //         name: "hidden field ",
+      //         value: "value from hidden field",
+      //       },
+      //       {
+      //         xtype: "numberfield",
+      //         anchor: "100%",
+      //         fieldLabel: "Numeric Field",
+      //         maxValue: 99,
+      //         minValue: 0,
+      //       },
+      //       {
+      //         xtype: "spinnerfield",
+      //         fieldLabel: "Spinner Field",
+      //         step: 6,
+
+      //         // override onSpinUp (using step isn't necessary)
+      //         onSpinUp: function () {
+      //           var me = this;
+
+      //           if (!me.readOnly) {
+      //             var val = me.step; // set the default value to the step value
+      //             if (me.getValue() !== "") {
+      //               val = parseInt(me.getValue().slice(0, -5)); // gets rid of " Pack"
+      //             }
+      //             me.setValue(val + me.step + " Pack");
+      //           }
+      //         },
+      //         // override onSpinDown
+      //         onSpinDown: function () {
+      //           var me = this;
+      //           if (!me.readOnly) {
+      //             if (me.getValue() !== "") {
+      //               val = parseInt(me.getValue().slice(0, -5)); // gets rid of " Pack"
+      //             }
+      //             me.setValue(val - me.step + " Pack");
+      //           }
+      //         },
+      //       },
+      //       {
+      //         xtype: "timefield",
+      //         fieldLabel: "Time field",
+      //         minValue: "6:00 AM",
+      //         maxValue: "8:00 PM",
+      //         increment: 30,
+      //         anchor: "100%",
+      //       },
+      //       {
+      //         xtype: "combobox",
+      //         fieldLabel: "Combo Box",
+      //         store: Ext.create("Ext.data.Store", {
+      //           fields: ["abbr", "name"],
+      //           data: [
+      //             {
+      //               abbr: "HTML",
+      //               name: "HTML",
+      //             },
+      //             {
+      //               abbr: "CSS",
+      //               name: "CSS",
+      //             },
+      //             {
+      //               abbr: "JS",
+      //               name: "JavaScript",
+      //             },
+      //           ],
+      //         }),
+      //         valueField: "abbr",
+      //         displayField: "name",
+      //       },
+      //       {
+      //         xtype: "filefield",
+      //         fieldLabel: "File field",
+      //         labelWidth: 50,
+      //         msgTarget: "side",
+      //         allowBlank: false,
+      //         anchor: "100%",
+      //         buttonText: "Select File...",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 20 msgBox
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("msgBox"),
+      //     text: "Click Me",
+      //     listeners: {
+      //       click: function () {
+      //         Ext.Msg.alert("Title", "Basic message box in ExtJS");
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 21 Confirm
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("msgBox"),
+      //     text: "Click Me",
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.confirm(
+      //           "Confirm",
+      //           "Are you sure you want to do this ?",
+      //           callbackFunction
+      //         );
+      //         function callbackFunction(btn) {
+      //           if (btn == "yes") {
+      //             Ext.Msg.alert("Button Click", "You clicked the Yes button");
+      //           } else {
+      //             Ext.Msg.alert("Button Click", "You clicked the No button");
+      //           }
+      //         }
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 22 Prompt
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("msgBox"),
+      //     text: "Click Me",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.Msg.prompt("Name", "Please enter your name:", function (
+      //           btn,
+      //           text
+      //         ) {
+      //           if (btn == "ok") {
+      //             Ext.Msg.alert("Hello", "Hello " + text);
+      //           }
+      //         });
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 23 multiline
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("msgBox"),
+      //     text: "Click Me",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.show({
+      //           title: "Details",
+      //           msg: "Please enter your details:",
+      //           width: 300,
+      //           buttons: Ext.MessageBox.OKCANCEL,
+      //           multiline: true,
+      //           fn: callbackFunction,
+      //         });
+      //         function callbackFunction() {
+      //           Ext.Msg.alert("status", "Details entered succesfully");
+      //         }
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 24 yes/no/cancel
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("msgBox"),
+      //     text: "Click Me",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.show({
+      //           title: "Details",
+      //           msg: "Please enter your details:",
+      //           width: 300,
+      //           buttons: Ext.MessageBox.YESNOCANCEL,
+      //           multiline: true,
+      //           fn: callbackFunction,
+      //         });
+      //         function callbackFunction() {
+      //           Ext.Msg.alert("status", "Details entered succesfully");
+      //         }
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 25 Pie Chart
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.chart.PolarChart", {
+      //     renderTo: document.body,
+      //     width: 600,
+      //     height: 300,
+
+      //     store: {
+      //       fields: ["name", "g1"],
+      //       data: [
+      //         { name: "Item-0", g1: 57 },
+      //         { name: "Item-1", g1: 45 },
+      //         { name: "Item-2", g1: 67 },
+      //       ],
+      //     },
+
+      //     //configure the legend.
+      //     legend: {
+      //       docked: "bottom",
+      //     },
+
+      //     //describe the actual pie series.
+      //     series: [
+      //       {
+      //         type: "pie",
+      //         xField: "g1",
+      //         label: {
+      //           field: "name",
+      //         },
+      //         donut: 30, // increase or decrease for increasing or decreasing donut area in middle.
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 26 Line Chart
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.chart.CartesianChart", {
+      //     renderTo: document.body,
+      //     width: 600,
+      //     height: 200,
+
+      //     store: {
+      //       fields: ["name", "g1", "g2"],
+      //       data: [
+      //         { name: "Item-0", g1: 57, g2: 59 },
+      //         { name: "Item-1", g1: 45, g2: 50 },
+      //         { name: "Item-2", g1: 67, g2: 43 },
+      //         { name: "Item-3", g1: 45, g2: 18 },
+      //         { name: "Item-4", g1: 30, g2: 90 },
+      //       ],
+      //     },
+      //     legend: {
+      //       docked: "bottom",
+      //     },
+
+      //     //define x and y axis.
+      //     axes: [
+      //       {
+      //         type: "numeric",
+      //         position: "left",
+      //       },
+      //       {
+      //         type: "category",
+      //         visibleRange: [0, 1],
+      //         position: "bottom",
+      //       },
+      //     ],
+
+      //     //define the actual series
+      //     series: [
+      //       {
+      //         type: "line",
+      //         xField: "name",
+      //         yField: "g1",
+      //         title: "Normal",
+      //       },
+      //       {
+      //         type: "line",
+      //         xField: "name",
+      //         yField: "g2",
+      //         title: "Smooth",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 27 Bar Chart
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.chart.CartesianChart", {
+      //     renderTo: document.body,
+      //     width: 600,
+      //     height: 200,
+      //     flipXY: true,
+
+      //     store: {
+      //       fields: ["name", "g1", "g2"],
+      //       data: [
+      //         { name: "Item-0", g1: 57, g2: 59 },
+      //         { name: "Item-1", g1: 45, g2: 50 },
+      //         { name: "Item-2", g1: 67, g2: 43 },
+      //         { name: "Item-3", g1: 45, g2: 18 },
+      //         { name: "Item-4", g1: 30, g2: 90 },
+      //       ],
+      //     },
+
+      //     //set legend configuration
+      //     legend: {
+      //       docked: "right",
+      //     },
+
+      //     //define the x and y-axis configuration.
+      //     axes: [
+      //       {
+      //         type: "numeric",
+      //         position: "bottom",
+      //         grid: true,
+      //         minimum: 0,
+      //       },
+      //       {
+      //         type: "category",
+      //         position: "left",
+      //       },
+      //     ],
+
+      //     //define the actual bar series.
+      //     series: [
+      //       {
+      //         type: "bar",
+      //         xField: "name",
+      //         yField: ["g1", "g2"],
+      //         axis: "left",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 28 Area Chart
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.chart.CartesianChart", {
+      //     renderTo: document.body,
+      //     width: 600,
+      //     height: 200,
+
+      //     store: {
+      //       fields: ["name", "g1", "g2"],
+      //       data: [
+      //         { name: "Item-0", g1: 57, g2: 59 },
+      //         { name: "Item-1", g1: 45, g2: 50 },
+      //         { name: "Item-2", g1: 67, g2: 43 },
+      //         { name: "Item-3", g1: 45, g2: 18 },
+      //         { name: "Item-4", g1: 30, g2: 90 },
+      //       ],
+      //     },
+      //     legend: {
+      //       docked: "right",
+      //     },
+      //     axes: [
+      //       {
+      //         type: "numeric",
+      //         position: "left",
+      //         grid: true,
+      //       },
+      //       {
+      //         type: "category",
+      //         position: "bottom",
+      //         visibleRange: [0, 5],
+      //       },
+      //     ],
+      //     series: [
+      //       {
+      //         type: "area",
+      //         xField: "name",
+      //         yField: ["g1", "g2"],
+      //         title: ["G1", "G2"],
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 29 Tooltip
+      // Ext.onReady(function () {
+      //   toolTip = new Ext.ToolTip({
+      //     id: "toolTip",
+      //     anchor: "bottom",
+      //     html: "This is a basic toolTip",
+      //     title: "Tool - Tip Title",
+      //     closable: true,
+      //     closeAction: "hide",
+      //   });
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("buttonId"),
+      //     text: "Hover Me",
+
+      //     listeners: {
+      //       mouseover: function () {
+      //         toolTip.show();
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 30 Window
+      // Ext.onReady(function () {
+      //   win = new Ext.Window({
+      //     title: "Email Window",
+      //     layout: "form",
+      //     width: 400,
+      //     closeAction: "close",
+      //     target: document.getElementById("buttonId"),
+      //     plain: true,
+
+      //     items: [
+      //       {
+      //         xtype: "textfield",
+      //         fieldLabel: "To",
+      //       },
+      //       {
+      //         xtype: "textfield",
+      //         fieldLabel: "CC",
+      //       },
+      //       {
+      //         xtype: "textfield",
+      //         fieldLabel: "BCC",
+      //       },
+      //       {
+      //         xtype: "textfield",
+      //         fieldLabel: "Subject",
+      //       },
+      //       {
+      //         xtype: "textarea",
+      //         fieldLabel: "Email Message",
+      //       },
+      //     ],
+
+      //     buttons: [
+      //       {
+      //         text: "Save Draft",
+      //         handler: function () {
+      //           Ext.Msg.alert("Save Draft", "Your msg is saved");
+      //         },
+      //       },
+      //       {
+      //         text: "Send",
+      //         handler: function () {
+      //           Ext.Msg.alert("Message Sent", "Your msg is sent");
+      //         },
+      //       },
+      //       {
+      //         text: "Cancel",
+      //         handler: function () {
+      //           win.close();
+      //           Ext.Msg.alert("close", "Email window is closed");
+      //         },
+      //       },
+      //     ],
+      //     buttonAlign: "center",
+      //   });
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("buttonId"),
+      //     text: "Click Me",
+
+      //     listeners: {
+      //       click: function () {
+      //         win.show();
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 31 HTML Editor
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.form.HtmlEditor", {
+      //     width: 580,
+      //     height: 250,
+      //     renderTo: document.getElementById("editorId"),
+      //   });
+      // });
+
+      // 32 Progress Bar
+      // Ext.onReady(function () {
+      //   function progressBar(v) {
+      //     return function () {
+      //       if (v == 10) {
+      //         Ext.MessageBox.hide();
+      //         result();
+      //       } else {
+      //         var i = v / 9;
+      //         Ext.MessageBox.updateProgress(
+      //           i,
+      //           Math.round(100 * i) + "% completed"
+      //         );
+      //       }
+      //     };
+      //   }
+      //   function showProgressBar() {
+      //     for (var i = 1; i < 11; i++) {
+      //       setTimeout(progressBar(i), i * 500);
+      //     }
+      //   }
+
+      //   // function showProgressBar() {
+      //   //   for (let i = 1; i < 11; i++) {
+      //   //     setTimeout(() => progressBar(i), i * 500);
+      //   //   }
+      //   // }
+      //   // function progressBar(v) {
+      //   //     if (v >= 10) {
+      //   //       Ext.MessageBox.hide();
+      //   //       result();
+      //   //     } else {
+      //   //       var i = v / 9;
+      //   //       Ext.MessageBox.updateProgress(
+      //   //         i,
+      //   //         Math.round(100 * i) + "% completed"
+      //   //       );
+      //   //     }
+      //   //   };
+
+      //   function result() {
+      //     Ext.Msg.alert("status", "Process completed succesfully");
+      //   }
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("buttonId"),
+      //     text: "Click Me",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.show({
+      //           title: "Please wait",
+      //           msg: "Loading items...",
+      //           progressText: "Initializing...",
+      //           width: 300,
+      //           progress: true,
+      //           closable: false,
+      //         });
+      //         showProgressBar();
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 33 Drag && Drop
+      // Ext.application({
+      //   launch: function () {
+      //     var images = Ext.get("images").select("img");
+      //     Ext.each(images.elements, function (el) {
+      //       var dd = Ext.create("Ext.dd.DD", el, "imagesDDGroup", {
+      //         isTarget: false,
+      //       });
+      //     });
+      //   },
+      // });
+      // var mainTarget = Ext.create(
+      //   "Ext.dd.DDTarget",
+      //   "mainRoom",
+      //   "imagesDDGroup",
+      //   {
+      //     ignoreSelf: false,
+      //   }
+      // );
+    </script>
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script
+      id="microloader"
+      data-app="faf97384-97b8-4685-b899-d732d2735710"
+      type="text/javascript"
+      src="generatedFiles/bootstrap.js"
+    ></script>
+
+    <!-- 33 -->
+    <!-- <style>
+      #content {
+        width: 600px;
+        height: 400px;
+        padding: 10px;
+        border: 1px solid #000;
+      }
+      #images {
+        float: left;
+        width: 40%;
+        height: 100%;
+        border: 1px solid Black;
+        background-color: rgba(222, 222, 222, 1);
+      }
+      #mainRoom {
+        float: left;
+        width: 55%;
+        height: 100%;
+        margin-left: 15px;
+        border: 1px solid Black;
+        background-color: rgba(222, 222, 222, 1);
+      }
+      .image {
+        width: 64px;
+        height: 64px;
+        margin: 10px;
+        cursor: pointer;
+        border: 1px solid Black;
+        display: inline-block;
+      }
+    </style> -->
+  </head>
   <body class="launching">
-    <div id="splash" style="margin-top:20%;font-family:Arial;font-size:64px;text-align:center;color:#404040;">
+    <!-- <div id="splash" style="margin-top:20%;font-family:Arial;font-size:64px;text-align:center;color:#404040;">
       <div id="theLoadingText">LOADING...</div>
       <i style="margin:20px;" class="fa fa-spinner fa-spin"></i>
-    </div>
+    </div> -->
+
+    <!-- 1 -->
+    <!-- <div id = "helloWorldPanel" /> -->
+
+    <!-- 18 -->
+    <!-- <div id = "gridDiv"></div> -->
+
+    <!-- 19 -->
+    <!-- <div id="formId"></div> -->
+
+    <!-- 20, 21, 22, 23, 24 -->
+    <!-- <p>Click the button for alert box</p>
+    <div id="msgBox"></div> -->
+
+    <!-- 29 -->
+    <!-- <div id="buttonId"></div> -->
+
+    <!-- 30 -->
+    <!-- <p>Click the button to see window</p>
+    <div id="buttonId"></div> -->
+
+    <!-- 31 -->
+    <!-- <div id="editorId"></div> -->
+
+    <!-- 32 -->
+    <!-- <p>Click the button to see progress bar</p>
+    <div id="buttonId"></div> -->
+
+    <!-- 33 -->
+    <!-- <div id="content">
+      <div id="images">
+        <img src="/extjs/images/1.jpg" class="image" />
+        <img src="/extjs/images/2.jpg" class="image" />
+        <img src="/extjs/images/3.jpg" class="image" />
+        <img src="/extjs/images/4.jpg" class="image" />
+        <img src="/extjs/images/5.jpg" class="image" />
+        <img src="/extjs/images/6.jpg" class="image" />
+        <img src="/extjs/images/7.jpg" class="image" />
+        <img src="/extjs/images/8.jpg" class="image" />
+      </div>
+      <div id="mainRoom"></div>
+    </div> -->
+
+    
   </body>
 </html>
