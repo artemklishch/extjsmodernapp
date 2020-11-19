@@ -11,28 +11,32 @@
     <link rel = "stylesheet" type = "text/css" href =
     "https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-crisp/resources/theme-crisp-all.css"
     / >
-    <script
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-triton/resources/theme-triton-all.css"
+      rel="stylesheet"
+    /> -->
+    <!-- <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"
-    ></script>
+    ></script> -->
 
-    <script
+    <!-- <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/charts.js"
     ></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/packages/charts/classic/classic/resources/charts-all.css"
       rel="stylesheet"
-    />
+    /> -->
 
     <script type="text/javascript">
-      // var Ext = Ext || {};
-      // Ext.beforeLoad = function (tags) {
-      //   //var s = location.search;
-      //   var profile;
-      //   profile = 'desktop';
-      //   Ext.manifest ='generatedFiles/' + profile;
-      // };
+      var Ext = Ext || {};
+      Ext.beforeLoad = function (tags) {
+        //var s = location.search;
+        var profile;
+        profile = 'desktop';
+        Ext.manifest ='generatedFiles/' + profile;
+      };
 
       // 1
       // Ext.onReady(function() {
@@ -1305,6 +1309,492 @@
       //     ignoreSelf: false,
       //   }
       // );
+
+      // 34 Custom Events
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("helloWorldPanel"),
+      //     text: "My Button",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.alert("Alert box", "Button is clicked");
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 34-1 Custom Events
+      // Ext.onReady(function () {
+      //   Ext.get("tag2").hide();
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("helloWorldPanel"),
+      //     text: "My Button",
+
+      //     listeners: {
+      //       click: function () {
+      //         this.hide();
+      //       },
+      //       hide: function () {
+      //         Ext.get("tag1").hide();
+      //         Ext.get("tag2").show();
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 34-2 Custom Events
+      // Ext.onReady(function () {
+      //   var button = Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("helloWorldPanel"),
+      //     text: "My Button",
+      //   });
+
+      //   // This way we can attach event to the button after the button is created.
+      //   button.on("click", function () {
+      //     Ext.MessageBox.alert("Alert box", "Button is clicked");
+      //   });
+      // });
+
+      // 34-3 Custom Event
+      // Ext.onReady(function () {
+      //   var button = Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("helloWorldPanel"),
+      //     text: "My Button",
+
+      //     listeners: {
+      //       myEvent: function (button) {
+      //         Ext.MessageBox.alert("Alert box", "My custom event is called");
+      //       },
+      //     },
+      //   });
+      //   Ext.defer(function () {
+      //     button.fireEvent("myEvent");
+      //   }, 5000);
+      // });
+
+      // 35 Icons
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.container.Container", {
+      //     renderTo: Ext.getBody(),
+      //     layout: "auto",
+      //     width: 600,
+
+      //     items: [
+      //       {
+      //         xtype: "button",
+      //         iconCls: "fa fa-car",
+      //         text: "Browse Fil1e",
+      //       },
+      //       {
+      //         xtype: "button",
+      //         iconCls: "fa fa-file",
+      //         text: "Browse File3",
+      //       },
+      //       {
+      //         xtype: "button",
+      //         iconCls: "fa fa-home",
+      //         text: "Browse File4",
+      //       },
+      //       {
+      //         xtype: "button",
+      //         iconCls: "fa fa-folder",
+      //         text: "Browse File5",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // Drawing
+      // 36 Circle
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     sprites: [
+      //       {
+      //         type: "circle",
+      //         fillStyle: "red",
+      //         r: 100,
+      //         cx: 100,
+      //         cy: 100,
+      //       },
+      //     ],
+      //     height: 205,
+      //     width: 205,
+      //     renderTo: Ext.getBody(),
+      //   });
+      // });
+
+      // 37 Rectangle
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.draw.Component", {
+      //     sprites: [
+      //       {
+      //         type: "rect",
+      //         height: 200,
+      //         width: 600,
+      //         fill: "red",
+      //       },
+      //     ],
+      //     height: 150,
+      //     width: 300,
+      //     renderTo: Ext.getBody(),
+      //   });
+      // });
+
+      // 38 Arc
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 600,
+      //     height: 400,
+
+      //     sprites: [
+      //       {
+      //         type: "arc",
+      //         cx: 100,
+      //         cy: 100,
+      //         r: 80,
+      //         fillStyle: "#1F6D91",
+      //         startAngle: 0,
+      //         endAngle: Math.PI,
+      //         anticlockwise: true,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 39 Ellipse
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 600,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "ellipse",
+      //         cx: 100,
+      //         cy: 100,
+      //         rx: 80,
+      //         ry: 50,
+      //         fillStyle: "#1F6D91",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 40 EllipticalArc
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 600,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "ellipticalArc",
+      //         cx: 100,
+      //         cy: 100,
+      //         rx: 80,
+      //         ry: 50,
+      //         fillStyle: "#1F6D91",
+      //         startAngle: 0,
+      //         endAngle: Math.PI,
+      //         anticlockwise: true,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 41 Image
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 600,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "image",
+      //         // src: "/extjs/images/1.jpg",
+      //         src:
+      //           "https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png",
+      //         width: 600,
+      //         height: 200,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 42 Path
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 300,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "path",
+      //         path: "M150 0 L25 100 L250 100 Z",
+      //         strokeStyle: "#333",
+      //         fill: "green",
+      //         lineWidth: 2,
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 43 Text
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 600,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "text",
+      //         x: 200,
+      //         y: 100,
+      //         text: "ExtJS Tutorials",
+      //         fontSize: 30,
+      //         fillStyle: "green",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 44 Translate after render
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 400,
+      //     height: 400,
+
+      //     sprites: [
+      //       {
+      //         type: "rect",
+      //         height: 200,
+      //         width: 200,
+      //         fill: "red",
+      //         translate: {
+      //           x: 10,
+      //           y: 10,
+      //         },
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 45 Rotation
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 200,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "rect",
+      //         height: 100,
+      //         width: 100,
+      //         x: 50,
+      //         y: 50,
+      //         fill: "red",
+      //         rotate: {
+      //           degrees: 45,
+      //         },
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // 46 Square
+      // Ext.onReady(function () {
+      //   Ext.create({
+      //     xtype: "draw",
+      //     renderTo: Ext.getBody(),
+      //     width: 300,
+      //     height: 200,
+
+      //     sprites: [
+      //       {
+      //         type: "square",
+      //         height: 100,
+      //         width: 100,
+      //         fill: "green",
+      //       },
+      //     ],
+      //   });
+      // });
+
+      // Localization
+      // 47 list
+      // Ext.onReady(function () {
+      //   var monthArray = Ext.Array.map(Ext.Date.monthNames, function (e) {
+      //     return [e];
+      //   });
+      //   var ds = Ext.create("Ext.data.Store", {
+      //     fields: ["month"],
+      //     remoteSort: true,
+      //     pageSize: 6,
+
+      //     proxy: {
+      //       type: "memory",
+      //       enablePaging: true,
+      //       data: monthArray,
+      //       reader: { type: "array" },
+      //     },
+      //   });
+      //   Ext.create("Ext.grid.Panel", {
+      //     renderTo: "grid",
+      //     id: "gridId",
+      //     width: 600,
+      //     height: 200,
+      //     title: "Month Browser",
+
+      //     columns: [
+      //       {
+      //         text: "Month of the year",
+      //         dataIndex: "month",
+      //         width: 300,
+      //       },
+      //     ],
+      //     store: ds,
+      //     bbar: Ext.create("Ext.toolbar.Paging", {
+      //       pageSize: 6,
+      //       store: ds,
+      //       displayInfo: true,
+      //     }),
+      //   });
+      //   Ext.getCmp("gridId").getStore().load();
+      // });
+
+      // 47-1 date
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.picker.Date", {
+      //     renderTo: "datePicker",
+      //   });
+      // });
+
+      // Accesibility
+      // 48
+      // Ext.onReady(function () {
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("button1"),
+      //     text: "Button1",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.alert("Alert box", "Button 1 is clicked");
+      //       },
+      //     },
+      //   });
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("button2"),
+      //     text: "Button2",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.alert("Alert box", "Button 2 is clicked");
+      //       },
+      //     },
+      //   });
+      //   Ext.create("Ext.Button", {
+      //     renderTo: Ext.getElementById("button3"),
+      //     text: "Button3",
+
+      //     listeners: {
+      //       click: function () {
+      //         Ext.MessageBox.alert("Alert box", "Button 3 is clicked");
+      //       },
+      //     },
+      //   });
+      // });
+
+      // 48-1
+      // Ext.require(["Ext.grid.*", "Ext.data.*"]);
+
+      // // Creation of data model
+      // Ext.define("StudentDataModel", {
+      //   extend: "Ext.data.Model",
+      //   fields: [
+      //     { name: "name", mapping: "name" },
+      //     { name: "age", mapping: "age" },
+      //     { name: "marks", mapping: "marks" },
+      //   ],
+      // });
+
+      // Ext.onReady(function () {
+      //   // Store data
+      //   var myData = [
+      //     { name: "Asha", age: "16", marks: "90" },
+      //     { name: "Vinit", age: "18", marks: "95" },
+      //     { name: "Anand", age: "20", marks: "68" },
+      //     { name: "Niharika", age: "21", marks: "86" },
+      //     { name: "Manali", age: "22", marks: "57" },
+      //   ];
+
+      //   // Creation of first grid store
+      //   var firstGridStore = Ext.create("Ext.data.Store", {
+      //     model: "StudentDataModel",
+      //     data: myData,
+      //   });
+
+      //   // Creation of first grid
+      //   var firstGrid = Ext.create("Ext.grid.Panel", {
+      //     store: firstGridStore,
+      //     columns: [
+      //       {
+      //         header: "Student Name",
+      //         dataIndex: "name",
+      //         id: "name",
+      //         flex: 1,
+      //         sortable: true,
+      //       },
+      //       {
+      //         header: "Age",
+      //         dataIndex: "age",
+      //         flex: 0.5,
+      //         sortable: true,
+      //       },
+      //       {
+      //         header: "Marks",
+      //         dataIndex: "marks",
+      //         flex: 0.5,
+      //         sortable: true,
+      //       },
+      //     ],
+      //     stripeRows: true,
+      //     title: "First Grid",
+      //     margins: "0 2 0 0",
+      //   });
+
+      //   // Creation of a panel to show both the grids.
+      //   var displayPanel = Ext.create("Ext.Panel", {
+      //     width: 600,
+      //     height: 200,
+
+      //     layout: {
+      //       type: "hbox",
+      //       align: "stretch",
+      //       padding: 5,
+      //     },
+      //     renderTo: "panel",
+      //     defaults: { flex: 1 },
+      //     items: [firstGrid],
+      //   });
+      // });
     </script>
 
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
@@ -1346,14 +1836,13 @@
         border: 1px solid Black;
         display: inline-block;
       }
-    </style> --> 
-
+    </style> -->
   </head>
   <body class="launching">
-    <!-- <div id="splash" style="margin-top:20%;font-family:Arial;font-size:64px;text-align:center;color:#404040;">
+    <div id="splash" style="margin-top:20%;font-family:Arial;font-size:64px;text-align:center;color:#404040;">
       <div id="theLoadingText">LOADING...</div>
       <i style="margin:20px;" class="fa fa-spinner fa-spin"></i>
-    </div> -->
+    </div>
 
     <!-- 1 -->
     <!-- <div id = "helloWorldPanel" /> -->
@@ -1397,6 +1886,39 @@
       <div id="mainRoom"></div>
     </div> -->
 
-    
+    <!-- 34 -->
+    <!-- <p>Please click the button to see event listener</p>
+    <div id="helloWorldPanel" /> -->
+
+    <!-- 34-1 -->
+    <!-- <div id="tag1">Please click the button to see event listener.</div>
+    <div id="tag2">The button was clicked and now it is hidden.</div>
+    <div id="helloWorldPanel" /> -->
+
+    <!-- 34-2 -->
+    <!-- <p>Please click the button to see event listener</p>
+    <div id="helloWorldPanel" /> -->
+
+    <!-- 34-3 -->
+    <!-- <p>The event will be called after 5 seconds when the page is loaded.</p>
+    <div id="helloWorldPanel" /> -->
+
+    <!-- 35 -->
+    <!-- <div id="panel"></div> -->
+
+    <!-- 47 -->
+    <!-- <div id="grid" /> -->
+
+    <!-- 47-1 -->
+    <!-- <div id="datePicker" /> -->
+
+    <!-- 48 -->
+    <!-- <p>Please click the button to see event listener:</p>
+    <span id="button3" />
+    <span id="button2" />
+    <span id="button1" /> -->
+
+    <!-- 48-1 -->
+    <!-- <div id="panel"></div> -->
   </body>
 </html>
